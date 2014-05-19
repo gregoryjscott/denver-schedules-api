@@ -7,8 +7,6 @@ public class DocsModule : NancyModule
 {
     public DocsModule()
     {
-        StaticConfiguration.DisableErrorTraces = false;
-
         Get ["/"] = _ => View["index.html"];
 
         Get["/lib/{all*}"] = parameters => {
@@ -51,7 +49,16 @@ public class DocsModule : NancyModule
                 produces = schedules.produces,
                 authorizations = schedules.authorizations,
                 apis = schedules.apis,
-                models = schedules.models
+                models = new {
+                    schedule = new {
+                        id = schedules.models.Schedule.id,
+                        properties = new {
+                            title = new {
+                                type = schedules.models.schedule.properties.title.type,
+                            }
+                        }
+                    }
+                }
             };
             return Response.AsJson(response);
         };

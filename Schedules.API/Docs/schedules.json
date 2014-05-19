@@ -14,8 +14,8 @@
         {
           "method": "GET",
           "summary": "Fetch all schedules",
-          "notes": "You probably don't want them all.",
-          "type": "Schedule",
+          "notes": "Schedules include City of Denver activites such as street cleaning.",
+          "type": "schedule",
           "nickname": "getSchedules",
           "authorizations": {},
           "parameters": [],
@@ -25,11 +25,11 @@
     },
   ],
   "models": {
-    "Schedule": {
-      "id": "Schedule",
+    "schedule": {
+      "id": "schedule",
       "properties": {
         "Title": {
-          "type": "string",
+          "type": "string"
         }
       }
     }
