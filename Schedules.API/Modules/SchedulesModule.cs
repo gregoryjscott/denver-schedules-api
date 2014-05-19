@@ -9,7 +9,7 @@ public class SchedulesModule : NancyModule
 				Title = "City Holidays",
 			};
 
-			return Response.AsJson (holidays);
+            return Response.AsJson(holidays).WithHeader("Access-Control-Allow-Origin", "*");
 		};
 	}
 }

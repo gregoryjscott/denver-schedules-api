@@ -1,34 +1,10 @@
 ﻿using Nancy;
-using Nancy.Responses;
 using Centroid;
-using System.IO;
 
 public class DocsModule : NancyModule
 {
     public DocsModule()
     {
-        Get ["/"] = _ => View["index.html"];
-
-        Get["/lib/{all*}"] = parameters => {
-            var fileName = (string)parameters.all;
-            return new GenericFileResponse(Path.Combine("Docs", "lib", fileName));
-        };
-
-        Get["/css/{all*}"] = parameters => {
-            var fileName = (string)parameters.all;
-            return new GenericFileResponse(Path.Combine("Docs", "css", fileName));
-        };
-
-        Get["/images/{all*}"] = parameters => {
-            var fileName = (string)parameters.all;
-            return new GenericFileResponse(Path.Combine("Docs", "images", fileName));
-        };
-
-        Get["/js/{all*}"] = parameters => {
-            var fileName = (string)parameters.all;
-            return new GenericFileResponse(Path.Combine("Docs", "js", fileName));
-        };
-
         Get ["/api-docs"] = _ => {
             dynamic resourceListing = Config.FromFile("Docs/resource-listing.json");
             return Response.AsJson(new {
@@ -36,7 +12,7 @@ public class DocsModule : NancyModule
                 swaggerVersion = resourceListing.swaggerVersion,
                 apis = resourceListing.apis,
                 info = resourceListing.info
-            });
+            }).WithHeader("Access-Control-Allow-Origin", "*");
         };
 
         Get ["/api-docs/schedules"] = _ => {
@@ -60,7 +36,7 @@ public class DocsModule : NancyModule
                     }
                 }
             };
-            return Response.AsJson(response);
+            return Response.AsJson(response).WithHeader("Access-Control-Allow-Origin", "*");
         };
     }
 }

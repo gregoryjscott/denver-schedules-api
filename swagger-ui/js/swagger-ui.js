@@ -1777,7 +1777,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         url: this.invocationUrl,
         headers: headerParams,
         data: bodyParam,
-        dataType: 'json',
+        dataType: 'jsonp',
         contentType: false,
         processData: false,
         error: function(data, textStatus, error) {
