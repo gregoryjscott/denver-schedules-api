@@ -118,7 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Compile Include="Modules\DocsModules.cs" />
+    <Compile Include="Modules\DocsModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs\resource-listing.json" />

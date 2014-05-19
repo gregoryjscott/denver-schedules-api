@@ -20,9 +20,9 @@
           "authorizations": {},
           "parameters": [],
           "responseMessages": []
-        },
+        }
       ]
-    },
+    }
   ],
   "models": {
     "schedule": {
