@@ -15,7 +15,7 @@
           "method": "GET",
           "summary": "Fetch all schedules",
           "notes": "Schedules include City of Denver activites such as street cleaning.",
-          "type": "schedule",
+          "type": "Schedule",
           "nickname": "getSchedules",
           "authorizations": {},
           "parameters": [],
@@ -25,8 +25,8 @@
     }
   ],
   "models": {
-    "event": {
-      "id": "event",
+    "Event": {
+      "id": "Event",
       "properties": {
         "Desc": {
           "type": "string"
@@ -39,8 +39,8 @@
         }
       }
     },
-    "schedule": {
-      "id": "schedule",
+    "Schedule": {
+      "id": "Schedule",
       "properties": {
         "Title": {
           "type": "string"
@@ -48,7 +48,7 @@
         "Events": {
           "type": "array",
           "items": {
-            "$ref": "event"
+            "$ref": "Event"
           }
         }
       }
