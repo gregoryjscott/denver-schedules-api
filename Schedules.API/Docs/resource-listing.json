@@ -3,8 +3,10 @@
   "swaggerVersion": "1.2",
   "apis": [
     {
-      "path": "/schedules",
-      "description": "Operations about schedules"
+      "path": "/schedules"
+    },
+    {
+      "path": "/reminders"
     }
   ],
   "info": {

@@ -123,6 +123,7 @@
   <ItemGroup>
     <None Include="Docs\resource-listing.json" />
     <None Include="Docs\schedules.json" />
+    <None Include="Docs\reminders.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Docs\" />

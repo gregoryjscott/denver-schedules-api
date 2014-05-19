@@ -7,6 +7,7 @@ public class DocsModule : NancyModule
     {
         Get["/api-docs"] = _ => FromJsonFile("resource-listing.json");
         Get["/api-docs/schedules"] = _ => FromJsonFile("schedules.json");
+        Get["/api-docs/reminders"] = _ => FromJsonFile("reminders.json");
     }
 
     static Response FromJsonFile(string jsonFile)
