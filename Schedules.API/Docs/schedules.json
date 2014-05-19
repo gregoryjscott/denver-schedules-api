@@ -25,11 +25,31 @@
     }
   ],
   "models": {
+    "event": {
+      "id": "event",
+      "properties": {
+        "Desc": {
+          "type": "string"
+        },
+        "Day": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        }
+      }
+    },
     "schedule": {
       "id": "schedule",
       "properties": {
         "Title": {
           "type": "string"
+        },
+        "Events": {
+          "type": "array",
+          "items": {
+            "$ref": "event"
+          }
         }
       }
     }
