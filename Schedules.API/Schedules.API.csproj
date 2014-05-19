@@ -107,19 +107,40 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="web.config" />
+    <Content Include="Views\index.html" />
+    <Content Include="Docs\css\reset.css" />
+    <Content Include="Docs\css\screen.css" />
+    <Content Include="Docs\images\explorer_icons.png" />
+    <Content Include="Docs\images\logo_small.png" />
+    <Content Include="Docs\images\pet_store_api.png" />
+    <Content Include="Docs\images\throbber.gif" />
+    <Content Include="Docs\images\wordnik_api.png" />
+    <Content Include="Docs\lib\backbone-min.js" />
+    <Content Include="Docs\lib\handlebars-1.0.0.js" />
+    <Content Include="Docs\lib\highlight.7.3.pack.js" />
+    <Content Include="Docs\lib\jquery.ba-bbq.min.js" />
+    <Content Include="Docs\lib\jquery.slideto.min.js" />
+    <Content Include="Docs\lib\jquery.wiggle.min.js" />
+    <Content Include="Docs\lib\jquery-1.8.0.min.js" />
+    <Content Include="Docs\lib\shred\content.js" />
+    <Content Include="Docs\lib\shred.bundle.js" />
+    <Content Include="Docs\lib\swagger.js" />
+    <Content Include="Docs\lib\swagger-oauth.js" />
+    <Content Include="Docs\lib\underscore-min.js" />
+    <Content Include="Docs\o2c.html" />
+    <Content Include="Docs\js\swagger-ui.js" />
+    <Content Include="Docs\js\swagger-ui.min.js" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Compile Include="Modules\SchedulesModule.cs" />
     <Compile Include="CustomBootstrapper.cs" />
     <Compile Include="CustomJsonSerializer.cs" />
-<<<<<<< HEAD
     <Compile Include="Modules\RemindersModule.cs" />
     <Compile Include="Models\Reminder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-=======
     <Compile Include="Modules\DocsModules.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Docs\" />
->>>>>>> WIP Add Docs module that returns Swagger json
+    <Folder Include="Views\" />
+    <Folder Include="Docs\js\" />
   </ItemGroup>
 </Project>

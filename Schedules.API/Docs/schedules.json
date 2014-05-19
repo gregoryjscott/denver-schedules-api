@@ -1,7 +1,7 @@
 ﻿{
   "apiVersion": "1.0.0",
   "swaggerVersion": "1.2",
-  "basePath": "http://localhost:8080",
+  "basePath": "http://127.0.0.1:8080",
   "resourcePath": "/schedules",
   "produces": [
     "application/json"
