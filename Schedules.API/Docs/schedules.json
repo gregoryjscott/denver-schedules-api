@@ -1,0 +1,37 @@
+﻿{
+  "apiVersion": "1.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:8080",
+  "resourcePath": "/schedules",
+  "produces": [
+    "application/json"
+  ],
+  "authorizations": {},
+  "apis": [
+    {
+      "path": "/schedules",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Fetch all schedules",
+          "notes": "You probably don't want them all.",
+          "type": "Schedule",
+          "nickname": "getSchedules",
+          "authorizations": {},
+          "parameters": [],
+          "responseMessages": []
+        },
+      ]
+    },
+  ],
+  "models": {
+    "Schedule": {
+      "id": "Schedule",
+      "properties": {
+        "Title": {
+          "type": "string",
+        }
+      }
+    }
+  }
+}

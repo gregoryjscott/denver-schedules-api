@@ -79,6 +79,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
@@ -112,10 +113,21 @@
     <Compile Include="Modules\SchedulesModule.cs" />
     <Compile Include="CustomBootstrapper.cs" />
     <Compile Include="CustomJsonSerializer.cs" />
+<<<<<<< HEAD
     <Compile Include="Modules\RemindersModule.cs" />
     <Compile Include="Models\Reminder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+=======
+    <Compile Include="Modules\DocsModules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Docs\resource-listing.json" />
+    <None Include="Docs\schedules.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Docs\" />
+>>>>>>> WIP Add Docs module that returns Swagger json
   </ItemGroup>
 </Project>
