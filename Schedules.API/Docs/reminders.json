@@ -12,21 +12,6 @@
       "path": "/reminders",
       "operations": [
         {
-          "method": "Get",
-          "summary": "Fetch list of reminders",
-          "notes": "",
-          "type": "Reminder",
-          "nickname": "fetchReminders",
-          "authorizations": {},
-          "parameters": [],
-          "responseMessages": []
-        }
-      ]
-    },
-    {
-      "path": "/reminders",
-      "operations": [
-        {
           "method": "POST",
           "summary": "Create a reminder",
           "notes": "Creates a reminder for a City of Denver event.",

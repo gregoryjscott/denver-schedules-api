@@ -6,6 +6,10 @@ namespace Schedules.API
     {
     	public SchedulesModule()
     	{
+            this.SetupDocs("schedules");
+
+            Options["/schedules"] = _ => new Response().AddPreflightCorsHeadersUsing(Request.Headers);
+
     		Get ["/schedules"] = _ => {
     			var holidays = new {
     				Title = "City Holidays",
