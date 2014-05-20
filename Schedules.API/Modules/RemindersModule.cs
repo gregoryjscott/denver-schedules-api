@@ -8,9 +8,9 @@ namespace Schedules.API
     {
         public RemindersModule()
         {
-            this.SetupDocs("reminders");
+            this.SetupDocsFor("reminders");
 
-            Options["/reminders"] = _ => new Response().AddPreflightCorsHeadersUsing(Request.Headers);
+            Options["/reminders"] = _ => Response.AllowCorsFor(Request);
 
             Post["/reminders"] = _ => { 
                 Reminder reminder = this.Bind<Reminder>();

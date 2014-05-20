@@ -6,9 +6,9 @@ namespace Schedules.API
     {
     	public SchedulesModule()
     	{
-            this.SetupDocs("schedules");
+            this.SetupDocsFor("schedules");
 
-            Options["/schedules"] = _ => new Response().AddPreflightCorsHeadersUsing(Request.Headers);
+            Options["/schedules"] = _ => Response.AllowCorsFor(Request);
 
     		Get ["/schedules"] = _ => {
     			var holidays = new {
@@ -71,7 +71,7 @@ namespace Schedules.API
     			}
     			};
 
-                return Response.AsJson (holidays).AddCorsHeader();
+                return Response.AsJson(holidays).AddCorsHeader();
     		};
     	}
     }

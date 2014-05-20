@@ -115,8 +115,7 @@
     <Compile Include="CustomJsonSerializer.cs" />
     <Compile Include="Modules\RemindersModule.cs" />
     <Compile Include="Models\Reminder.cs" />
-    <Compile Include="ResponseExtensions.cs" />
-    <Compile Include="ModuleExtensions.cs" />
+    <Compile Include="CustomExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

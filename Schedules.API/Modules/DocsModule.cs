@@ -7,9 +7,10 @@ namespace Schedules.API
     {
         public DocsModule()
         {
+            Options["/api-docs"] = _ => Response.AllowCorsFor(Request);
+
             var jsonFile = Path.Combine("Docs", "resource-listing.json");
-            Options["/api-docs"] = _ => new Response().AddPreflightCorsHeadersUsing(Request.Headers);
-            Get["/api-docs"] = _ => this.FromJsonFile(jsonFile).AddCorsHeader();
+            Get["/api-docs"] = _ => Response.FromFile(jsonFile).AddCorsHeader();
         }
     }
 }
