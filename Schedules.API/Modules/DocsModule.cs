@@ -1,20 +1,57 @@
 ﻿using Nancy;
+using System;
 using System.IO;
 
-public class DocsModule : NancyModule
+namespace Schedules.API
 {
-    public DocsModule()
+    public class DocsModule : NancyModule
     {
-        Get["/api-docs"] = _ => FromJsonFile("resource-listing.json");
-        Get["/api-docs/schedules"] = _ => FromJsonFile("schedules.json");
-        Get["/api-docs/reminders"] = _ => FromJsonFile("reminders.json");
-    }
+        public DocsModule()
+        {
+            Get["/api-docs"] = _ => this.FromJsonFile("resource-listing.json").AddCorsHeader();
+            Get["/api-docs/schedules"] = _ => this.FromJsonFile("schedules.json").AddCorsHeader();
+            Get["/api-docs/reminders"] = _ => this.FromJsonFile("reminders.json").AddCorsHeader();
 
-    static Response FromJsonFile(string jsonFile)
+            Options["/api-docs"] = _ => new Response().AddPreflightCorsHeaders(this.Request);
+            Options["/api-docs/schedules"] = _ => new Response().AddPreflightCorsHeaders(this.Request);
+            Options["/api-docs/reminders"] = _ => new Response().AddPreflightCorsHeaders(this.Request);
+            Options["/schedules"] = _ => new Response().AddPreflightCorsHeaders(this.Request);
+            Options["/reminders"] = _ => new Response().AddPreflightCorsHeaders(this.Request);
+        }
+    }
+}
+
+namespace Schedules.API
+{
+    public static class ModuleExtensions
     {
-        var json = File.ReadAllText(Path.Combine("Docs", jsonFile));
-        var response = (Response)json;
-        response.ContentType = "application/json";
-        return response.WithHeader("Access-Control-Allow-Origin", "*");
+        public static Response FromJsonFile(this NancyModule module, string jsonFile)
+        {
+            var json = File.ReadAllText(Path.Combine("Docs", jsonFile));
+            var response = (Response)json;
+            response.ContentType = "application/json";
+            return response;
+        }
+    }
+}
+
+namespace Schedules.API
+{
+    public static class ResponseExtensions
+    {
+        public static Response AddPreflightCorsHeaders(this Response response, Request request)
+        {
+            var requestHeaders = request.Headers["Access-Control-Request-Headers"];
+            var allowHeaders = String.Join(", ", requestHeaders);
+            return response
+                .WithHeader("Access-Control-Allow-Origin", "*")
+                .WithHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH, OPTIONS")
+                .WithHeader("Access-Control-Allow-Headers", allowHeaders);
+        }
+
+        public static Response AddCorsHeader(this Response response)
+        {
+            return response.WithHeader("Access-Control-Allow-Origin", "*");
+        }
     }
 }
