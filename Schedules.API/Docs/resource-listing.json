@@ -14,7 +14,7 @@
     "description": "The Denver Schedules API provides access to City of Denver schedules such as street sweeping.",
     "termsOfServiceUrl": "",
     "contact": "bboone@codeforamerica.org",
-    "license": "Apache 2.0",
-    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    "license": "MIT License",
+    "licenseUrl": "https://github.com/codeforamerica/denver-schedules-api/blob/master/LICENSE"
   }
 }
