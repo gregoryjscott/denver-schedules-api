@@ -2,6 +2,7 @@ using Nancy;
 using Schedules.API;
 using Centroid;
 using Simpler;
+using System;
 
 public class JaggerModule : NancyModule
 {
@@ -13,18 +14,33 @@ public class JaggerModule : NancyModule
         {
             foreach (dynamic operation in api.operations)
             {
+                var path = (string)api.path;
+                var jaggerTask = FindJaggerTask(ToPascalCase((string)operation.nickname));
+                Func<dynamic, dynamic> action = parameters => {
+                    jaggerTask.In.Module = this;
+                    jaggerTask.In.Parameters = parameters;
+                    jaggerTask.Execute();
+                    return jaggerTask.Out.Response;
+                };
+
                 if (operation.method == "POST")
                 {
-                    var path = (string)api.path;
-                    Post[path] = parameters => {
-                        var createReminder = Task.New<CreateReminder>();
-                        createReminder.In.Module = this;
-                        createReminder.In.Parameters = parameters;
-                        createReminder.Execute();
-                        return createReminder.Out.Response;
-                    };
+                    Post[path] = action;
                 }
             }
         }
+    }
+
+    static JaggerTask FindJaggerTask(string name)
+    {
+        return Task.New<CreateReminder>();
+    }
+
+    static string ToPascalCase(string camelCase)
+    {
+        if (camelCase.Length == 0) return camelCase;
+        if (camelCase.Length == 1) return camelCase.ToUpper();
+
+        return String.Concat(camelCase.Substring(0, 1).ToUpper(), camelCase.Substring(1));
     }
 }

@@ -129,6 +129,7 @@
     <Compile Include="Models\State.cs" />
     <Compile Include="Modules\JaggerModule.cs" />
     <Compile Include="Tasks\CreateReminder.cs" />
+    <Compile Include="Tasks\JaggerTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
