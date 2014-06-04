@@ -1,0 +1,61 @@
+﻿{
+  "apiVersion": "1.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://127.0.0.1:8080",
+  "resourcePath": "/schedules",
+  "produces": [
+    "application/json"
+  ],
+  "authorizations": {},
+  "apis": [
+    {
+      "path": "/reminders",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Create a reminder",
+          "notes": "Creates a reminder for a City of Denver event.",
+          "type": "Reminder",
+          "nickname": "createReminder",
+          "authorizations": {},
+          "parameters": [
+            {
+              "name": "body",
+              "description": "reminder to create",
+              "required": true,
+              "type": "Reminder",
+              "paramType": "body"
+            }
+          ],
+          "responseMessages": []
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Reminder": {
+      "id": "Reminder",
+      "properties": {
+        "Email": {
+          "type": "string"
+        },
+        "Cell": {
+          "type": "string"
+        },
+        "Message": {
+          "type": "string"
+        },
+        "RemindOn": {
+          "type": "string",
+          "format": "dateTime"
+        },
+        "EmailVerified": {
+          "type": "boolean"
+        },
+        "CellVerified": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
