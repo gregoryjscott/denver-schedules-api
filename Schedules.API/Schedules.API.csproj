@@ -121,6 +121,7 @@
     <Compile Include="Extensions\DateTimeUnixTimeStamp.cs" />
     <Compile Include="Modules\StatusModule.cs" />
     <Compile Include="Models\State.cs" />
+    <Compile Include="Modules\JaggerModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
