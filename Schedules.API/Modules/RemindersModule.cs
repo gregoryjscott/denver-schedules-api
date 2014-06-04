@@ -3,5 +3,5 @@ using Jagger;
 
 public class RemindersModule : JaggerModule
 {
-    public RemindersModule() : base(apiDeclaration: File.ReadAllText("Docs/reminders.json")) {}
+    public RemindersModule() : base(File.ReadAllText("Resources/reminder.json")) {}
 }

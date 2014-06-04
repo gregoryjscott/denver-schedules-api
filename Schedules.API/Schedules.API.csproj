@@ -128,14 +128,14 @@
     <Folder Include="Models\" />
     <Folder Include="Extensions\" />
     <Folder Include="Modules\" />
-    <Folder Include="Docs\" />
     <Folder Include="Tasks\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Docs\reminders.json">
+    <None Include="Resources\reminder.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Docs\schedules.json">
+    <None Include="Resources\schedule.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
