@@ -1,7 +1,7 @@
 using Nancy;
-using Nancy.ModelBinding;
-using Schedules.API.Models;
+using Schedules.API;
 using Centroid;
+using Simpler;
 
 public class JaggerModule : NancyModule
 {
@@ -16,9 +16,12 @@ public class JaggerModule : NancyModule
                 if (operation.method == "POST")
                 {
                     var path = (string)api.path;
-                    Post[path] = _ => {
-                        Reminder reminder = this.Bind<Reminder>();
-                        return Response.AsJson(reminder, HttpStatusCode.Created);
+                    Post[path] = parameters => {
+                        var createReminder = Task.New<CreateReminder>();
+                        createReminder.In.Module = this;
+                        createReminder.In.Parameters = parameters;
+                        createReminder.Execute();
+                        return createReminder.Out.Response;
                     };
                 }
             }

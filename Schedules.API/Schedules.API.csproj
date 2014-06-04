@@ -74,6 +74,12 @@
     <Reference Include="Centroid">
       <HintPath>..\packages\Centroid.1.0.1\lib\net40\Centroid.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Simpler">
+      <HintPath>..\packages\Simpler.3.0.0\lib\Simpler.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -122,12 +128,14 @@
     <Compile Include="Modules\StatusModule.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Modules\JaggerModule.cs" />
+    <Compile Include="Tasks\CreateReminder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Extensions\" />
     <Folder Include="Modules\" />
     <Folder Include="Docs\" />
+    <Folder Include="Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs\reminders.json">
