@@ -1,6 +1,6 @@
 using Simpler;
 
-namespace Schedules.API
+namespace Jagger
 {
     public abstract class JaggerTask : InOutTask<JaggerTask.Input, JaggerTask.Output>
     {

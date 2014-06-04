@@ -71,12 +71,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Centroid">
-      <HintPath>..\packages\Centroid.1.0.1\lib\net40\Centroid.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core">
-      <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Simpler">
       <HintPath>..\packages\Simpler.3.0.0\lib\Simpler.dll</HintPath>
     </Reference>
@@ -127,9 +121,7 @@
     <Compile Include="Extensions\DateTimeUnixTimeStamp.cs" />
     <Compile Include="Modules\StatusModule.cs" />
     <Compile Include="Models\State.cs" />
-    <Compile Include="Modules\JaggerModule.cs" />
     <Compile Include="Tasks\CreateReminder.cs" />
-    <Compile Include="Tasks\JaggerTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -142,5 +134,11 @@
     <None Include="Docs\reminders.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jagger\Jagger.csproj">
+      <Project>{2F3424B4-2D32-410D-A282-F114098E4B09}</Project>
+      <Name>Jagger</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
