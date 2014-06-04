@@ -1,0 +1,57 @@
+﻿{
+  "apiVersion": "1.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://127.0.0.1:8080",
+  "resourcePath": "/schedules",
+  "produces": [
+    "application/json"
+  ],
+  "authorizations": {},
+  "apis": [
+    {
+      "path": "/schedules",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Fetch all schedules",
+          "notes": "Schedules include all City of Denver events.",
+          "type": "Schedule",
+          "nickname": "indexSchedules",
+          "authorizations": {},
+          "parameters": [],
+          "responseMessages": []
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Event": {
+      "id": "Event",
+      "properties": {
+        "Desc": {
+          "type": "string"
+        },
+        "Day": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        }
+      }
+    },
+    "Schedule": {
+      "id": "Schedule",
+      "properties": {
+        "Title": {
+          "type": "string"
+        },
+        "Events": {
+          "type": "array",
+          "items": {
+            "$ref": "Event"
+          }
+        }
+      }
+    }
+  }
+}

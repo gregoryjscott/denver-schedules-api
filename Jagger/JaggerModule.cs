@@ -27,7 +27,11 @@ namespace Jagger
                         return jaggerTask.Out.Response;
                     };
 
-                    if (operation.method == "POST")
+                    if (operation.method == "GET")
+                    {
+                        Get[path] = action;
+                    }
+                    else if (operation.method == "POST")
                     {
                         Post[path] = action;
                     }

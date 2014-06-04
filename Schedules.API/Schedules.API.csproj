@@ -122,6 +122,7 @@
     <Compile Include="Modules\StatusModule.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Tasks\CreateReminder.cs" />
+    <Compile Include="Tasks\IndexSchedules.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -132,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs\reminders.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Docs\schedules.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
