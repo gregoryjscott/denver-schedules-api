@@ -1,8 +1,10 @@
 using Nancy;
 using Schedules.API;
 using Centroid;
-using Simpler;
+using System.Reflection;
+using Simpler.Core.Tasks;
 using System;
+using System.Linq;
 
 public class JaggerModule : NancyModule
 {
@@ -15,7 +17,8 @@ public class JaggerModule : NancyModule
             foreach (dynamic operation in api.operations)
             {
                 var path = (string)api.path;
-                var jaggerTask = FindJaggerTask(ToPascalCase((string)operation.nickname));
+                var nickname = ToPascalCase((string)operation.nickname);
+                var jaggerTask = FindJaggerTask(nickname, Assembly.GetAssembly(GetType()));
                 Func<dynamic, dynamic> action = parameters => {
                     jaggerTask.In.Module = this;
                     jaggerTask.In.Parameters = parameters;
@@ -31,9 +34,14 @@ public class JaggerModule : NancyModule
         }
     }
 
-    static JaggerTask FindJaggerTask(string name)
+    static JaggerTask FindJaggerTask(string name, Assembly assembly)
     {
-        return Task.New<CreateReminder>();
+        var taskType = assembly.GetTypes().SingleOrDefault(t => t.Name == name);
+        if (taskType == null) throw new Exception(String.Format("Can't find {0}!", name));
+
+        var createTask = new CreateTask { In = { TaskType = taskType } };
+        createTask.Execute();
+        return (JaggerTask)createTask.Out.TaskInstance;
     }
 
     static string ToPascalCase(string camelCase)
