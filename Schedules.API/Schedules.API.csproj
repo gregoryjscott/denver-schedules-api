@@ -146,6 +146,7 @@
     <Compile Include="Models\ReminderType.cs" />
     <Compile Include="Tasks\ReminderTypes\FetchReminderTypes.cs" />
     <Compile Include="Tasks\Db.cs" />
+    <Compile Include="ThingThatUsesConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

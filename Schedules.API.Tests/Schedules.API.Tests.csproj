@@ -58,10 +58,12 @@
     <Compile Include="Modules\StatusTests.cs" />
     <Compile Include="Modules\ReminderTypesTests.cs" />
     <Compile Include="Tasks\ReminderTypes\FetchReminderTypesTest.cs" />
+    <Compile Include="ThingThatUsesConfigTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Schedules.API\Schedules.API.csproj">
