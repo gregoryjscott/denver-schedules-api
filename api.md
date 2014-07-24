@@ -2,7 +2,7 @@
 
 ## Current
 
-* POST /reminders
+* POST /reminders (POST data contains sms, email, etc. and physical address)
 * POST /reminders/notify (in add-twilio)
 * POST /reminders/triggers (in email-triggers branch)
 * GET /reminderTypes
@@ -22,7 +22,11 @@
 * GET /schedules/holidays
 * GET /status
 
-## Other ideas
+* GET /reminders/email (one per user)
+* GET /notifications/email (one per notification)
+* DELETE /reminders/email (POST data would have to contain sms # and physical address)
+
+## Other potential routes (brainstorming)
 
 * GET /schedules/streets/1/sweeping/1
 * GET /reminders/email/triggers
@@ -31,8 +35,7 @@
 * GET /schedules/school/high/2014/football
 * GET /schedules/reccenters/yoga
 
-
-## Random schedule things
+## Other potential schedules (more brainstorming)
 
 * District based routes
 * Community based routes
@@ -49,6 +52,12 @@
   * Construction
 * Police/Crime meetings
 * Public Hearings
+
+## Questions
+
+* What if two cities (think small towns) wanted to share an API implementation?
+* Can you change POST /reminders from reminding only once to be a subscription without breaking the API?
+* What are the time constraints on an API? Is a new version per year too much?
 
 ## Actions
 
