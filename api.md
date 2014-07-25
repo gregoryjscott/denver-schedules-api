@@ -41,6 +41,7 @@
 >Going with all singular resources in these examples as an experiment.
 
 * District/Community based routes
+  * Every department divides up cities into different regions
   * GET /district/23/schedule/reminder
   * GET /community/capital-hill/reminder
   * you could allow any GET route to contain the district or community prefix
