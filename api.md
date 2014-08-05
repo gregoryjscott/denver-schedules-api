@@ -82,3 +82,16 @@
 ## Actions
 
 * Only allow streetsweep.co to POST reminders
+
+# Setting up the API
+
+1. Fork something.
+2. Do a bunch of work
+
+# Evolving an API
+
+1. Receive new data
+2. Determine its final structure
+3. Figure out its API operations
+4. Add the API operation declarations (Swagger)
+5. Implement the operation backend functionality (Tasks)
