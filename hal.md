@@ -4,6 +4,13 @@ http://tools.ietf.org/html/draft-kelly-json-hal-06
 
 This is a first draft of how the API might be presented using the HAL media type.
 
+## Resources (included in this draft)
+
+- Reminder - includes links to the different kinds of reminders resources, Email and Sms
+- Email - includes email information
+- SMS - includes SMS information
+- Send - includes the information associated to the act of sending
+
 ## GET /
 
 The response would include:
