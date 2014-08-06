@@ -9,6 +9,7 @@ This is a first draft of how the API might be presented using the HAL media type
 - Reminder - includes links to the different kinds of reminders resources, Email and Sms
 - Email - includes email information
 - SMS - includes SMS information
+- Address - location of some event
 - Send - includes the information associated to the act of sending
 
 ## GET /
