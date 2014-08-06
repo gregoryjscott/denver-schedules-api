@@ -22,7 +22,9 @@ The response would include:
 {
   "_links": {
     "self": "/",
-    "reminders": "/reminders"
+    "reminders": "/reminders",
+    "email": "/email",
+    "sms": "/sms"
   }
 }
 ```
@@ -64,7 +66,7 @@ The response would include:
     "find": { "href": "/reminders/sms{?id}", "templated": true }
   },
   "_embedded": {
-    "sms": [
+    "reminders": [
       {
         "_links": {
           "self": { "href": "/reminders/sms/1" },
@@ -100,8 +102,9 @@ The response would include:
 {
   "_links": {
     "self": { "href": "/reminders/email/523" },
-    "address": { "href": "/addresses/89"}
-    "email": { "href": "/email/56" }
+    "address": { "href": "/addresses/89"},
+    "email": { "href": "/email/56" },
+    "unsubscribe": { "href": "/reminders/email/523/unsubscribe"}
   },
   "remindOn": "2014-09-01",
   "_embedded": {
@@ -117,7 +120,8 @@ The response would include:
     "email": {
       "_links": {
         "self": { "href": "/email/56" },
-        "reminders": { "href": "/email/56/reminders" }
+        "reminders": { "href": "/email/56/reminders" },
+        "unsubscribe": { "href": "/email/56/unsubscribe" }
       },
       "to": "someone@example.com"
     }
