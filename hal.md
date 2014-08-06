@@ -66,27 +66,27 @@ The response would include:
     "next": { "href": "/reminders/sms?page=2" },
     "find": { "href": "/reminders/sms{?id}", "templated": true }
   },
-  "_embedded": {
-    "reminders": [
-      {
-        "_links": {
-          "self": { "href": "/reminders/sms/1" },
-          "address": { "href": "/addresses/23"},
-          "sms": { "href": "/sms/78" },
-          "unsubscribe": { "href": "/reminders/sms/1/unsubscribe"}
-        },
-        "remindOn": "2014-08-01"
+  "items": [
+    {
+      "_links": {
+        "self": { "href": "/reminders/sms/1" },
+        "address": { "href": "/addresses/23"},
+        "sms": { "href": "/sms/78" },
+        "unsubscribe": { "href": "/reminders/sms/1/unsubscribe"}
       },
-      {
-        "_links": {
-          "self": { "href": "/reminders/sms/2" },
-          "address": { "href": "/addresses/23"}
-          "sms": { "href": "/sms/78" }
-        },
-        "remindOn": "2014-07-01"
-      }
-    ]
-  }
+      "id": 1,
+      "remindOn": "2014-08-01"
+    },
+    {
+      "_links": {
+        "self": { "href": "/reminders/sms/2" },
+        "address": { "href": "/addresses/23"}
+        "sms": { "href": "/sms/78" }
+      },
+      "id": 2,
+      "remindOn": "2014-07-01"
+    }
+  ]
 }
 ```
 
@@ -108,6 +108,7 @@ The response would include:
     "email": { "href": "/email/56" },
     "unsubscribe": { "href": "/reminders/email/523/unsubscribe"}
   },
+  "id": 523,
   "remindOn": "2014-09-01",
   "_embedded": {
     "address": {
@@ -115,6 +116,7 @@ The response would include:
         "self": { "href": "/addresses/89" },
         "reminders": { "href": "/addresses/89/reminders" }
       },
+      "id": 89,
       "longitude": "123.456",
       "latitude": "90.123",
       "accuracy": 0.5
@@ -125,6 +127,7 @@ The response would include:
         "reminders": { "href": "/email/56/reminders" },
         "unsubscribe": { "href": "/email/56/unsubscribe" }
       },
+      "id": 56,
       "to": "someone@example.com"
     }
   }
