@@ -71,8 +71,9 @@ The response would include:
       {
         "_links": {
           "self": { "href": "/reminders/sms/1" },
-          "address": { "href": "/addresses/23"}
-          "sms": { "href": "/sms/78" }
+          "address": { "href": "/addresses/23"},
+          "sms": { "href": "/sms/78" },
+          "unsubscribe": { "href": "/reminders/sms/1/unsubscribe"}
         },
         "remindOn": "2014-08-01"
       },
