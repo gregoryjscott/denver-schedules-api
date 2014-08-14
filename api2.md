@@ -15,6 +15,20 @@
 
 * `GET /` (new)
   - links to `/authenticate`, `doc`, `/reminders`, `/send`, `/schedules`, and `/status` resources
+  - JSON would be
+  ```
+  {
+    "_links": {
+      "self": "/"
+      "authenticate": "/authenticate",
+      "doc": "/doc",
+      "reminders": "/reminders",
+      "send": "/send",
+      "schedules": "/schedules",
+      "status": "/status"
+    }
+  }
+  ```
   - should `/index.html` and `/index.json` be treated differently?
     - JSON representation of the `/` resource would be hypermedia links
     - HTML representation would include instructions for hitting the JSON links, especially `/doc`
