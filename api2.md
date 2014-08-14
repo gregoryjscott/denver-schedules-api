@@ -14,8 +14,7 @@
 ## Proposed
 
 * `GET /` (new)
-  - links to `/authenticate`, `/reminders`, `/send`, `/schedules`, and `/status` resources
-    - should `/doc` be included?
+  - links to `/authenticate`, `doc`, `/reminders`, `/send`, `/schedules`, and `/status` resources
   - should `/index.html` and `/index.json` be treated differently?
     - JSON representation of the `/` resource would be hypermedia links
     - HTML representation would include instructions for hitting the JSON links, especially `/doc`
