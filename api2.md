@@ -49,7 +49,6 @@
 * `POST /send/email/reminders` (renamed)
   - might consider swapping _email_ and _reminders_, i.e. `send/reminders/email`
     - not as readable but matches up with `/reminders/email` resource
-      - perhaps that resource should be `/email/reminders` instead?
 * `POST /send/sms/reminders` (renamed)
   - see `/send/email/reminders` comments
 * `GET /status`
